@@ -19,17 +19,15 @@ const objectToSplitTime = {
 };
 
 const splitTime = obj => {
+  
+  const dateTime = Object.entries(obj)[0][1].split(" ")
+  const date = dateTime[0];
+  const time = dateTime[1];
+ 
+  obj.date = date;
+  obj.time = time;
+ 
   console.log(obj);
-  const key = Object.keys(obj);
-  const values = Object.values(obj);
-
-  if (key[0] === "time") {
-    const date = values[0].split(" ");
-    obj.date = date[0];
-  }
-
-  console.log(obj);
-
   return obj;
 };
 
